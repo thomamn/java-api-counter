@@ -55,7 +55,7 @@ public class CounterController {
     @GetMapping("counter/custom/{name}/decrement")
     public String getCustomDecrement(@PathVariable String name){
         if (!counters.containsKey(name)){
-            counters.put(name, 1);
+            counters.put(name, -1);
             return String.valueOf(counters.get(name));
         }
         counters.replace(name, counters.get(name)-1);
